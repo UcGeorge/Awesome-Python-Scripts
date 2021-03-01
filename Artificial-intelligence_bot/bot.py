@@ -4,7 +4,7 @@ try:
 except ImportError:
     print('[!] Failed to import the module')
     try:
-        select = raw_input('[*] Attempt to auto-install aiml? [Y/n')
+        select = input('[*] Attempt to auto-install aiml? [Y/n')
     except KeyboardInterrupt:
         print('\n[!] User Cancel')
         sys.exit(5)
@@ -23,11 +23,11 @@ except ImportError:
     elif select.strip().lower()[0] == 'n':
         print('[*] User cancel Auto-install')
         sys.exit(5)
-        
+
 
 kern = aiml.Kernel()
 kern.learn('load.xml')
 kern.respond('load aiml b')
 
 while True:
-    print(kern.respond(raw_input('Type your Message >>')))
+    print(kern.respond(input('Type your Message >>')))
